@@ -26,8 +26,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Montserrat:wght@800;900&family=Source+Sans+3:wght@400;600;700&display=swap">
-  <script type="module" crossorigin src="/lanes-five/assets/index-9T64-522.js"></script>
-  <link rel="stylesheet" crossorigin href="/lanes-five/assets/index-CdaA9pJB.css">
+  <script type="module" crossorigin src="/lanes-five/assets/index-ZsKgMVA_.js"></script>
+  <link rel="stylesheet" crossorigin href="/lanes-five/assets/index-BkSIE8aZ.css">
 </head>
 <body>
 <script>addEventListener('error',function(e){if(!window.__bootErr&&(e.message||(e.target&&e.target.tagName==='SCRIPT')))window.__bootErr=String(e.message||'a game file did not load').slice(0,90)},true);addEventListener('unhandledrejection',function(e){if(!window.__bootErr)window.__bootErr=String((e.reason&&e.reason.message)||e.reason).slice(0,90)});</script>
@@ -223,7 +223,12 @@
 </header>
 
 <section id="flagPanel" class="card flag-panel" role="dialog" aria-modal="false" aria-labelledby="flagTitle" hidden>
-  <div class="flag-head"><h2 id="flagTitle">Flag something</h2><button type="button" id="flagClose">Done</button></div>
+  <div class="flag-head"><h2 id="flagTitle">Flags</h2><button type="button" id="flagClose">Done</button></div>
+  <div id="fixedUpdate" class="fixed-update" role="status" hidden><p>A newer version of the game is out with new fixes.</p><button type="button" id="fixedReload">Refresh to get them</button></div>
+  <div class="flag-tabs" role="tablist" aria-label="Flags">
+    <button type="button" role="tab" id="flagTabNew" aria-controls="flagNew" aria-selected="true">Flag something</button><button type="button" role="tab" id="flagTabFixed" aria-controls="flagFixed" aria-selected="false" tabindex="-1">What's fixed <span id="fixedDot" class="fixed-dot" hidden>New</span></button>
+  </div>
+  <div id="flagNew" role="tabpanel" aria-labelledby="flagTabNew" class="flag-pane">
   <p class="muted">Write down what went wrong, what you wish the game had, or what you want to know.</p>
   <p id="flagWhere" class="muted" hidden>Flags stay on this device for now. Use Copy all to share them.</p>
   <div class="flag-kinds" role="radiogroup" aria-label="What kind of flag">
@@ -234,6 +239,11 @@
   <div class="flag-send"><span id="flagCount" class="muted">0 of 500</span><button type="button" id="flagSend" class="primary" disabled>Save flag</button></div>
   <p id="flagThanks" role="status" aria-live="polite" hidden></p>
   <div id="flagMine" hidden><div class="flag-mine-head"><h3>Your flags</h3><button type="button" id="flagCopy">Copy all</button></div><ol id="flagList"></ol></div>
+  </div>
+  <div id="flagFixed" role="tabpanel" aria-labelledby="flagTabFixed" class="flag-pane" hidden>
+    <p class="muted">Things players flagged that are now fixed.</p>
+    <ol id="fixedList"></ol>
+  </div>
 </section>
 <div class="tools card" role="toolbar" aria-label="View">
   <button id="toolsFold" class="fold-btn" aria-expanded="true" aria-label="Hide these buttons" title="Hide these buttons"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
